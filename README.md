@@ -1,15 +1,12 @@
 
 # BaseProject
 
-
-
-
 ```
 *2019-2-17
-#### 打算用于所有快速项目中的基类,以便快速使用开发
+### 打算用于所有快速项目中的基类,以便快速使用开发
 所有的自定义控件写在utils包下面，res/layout/weight用于存放自定义控件的布局文件
 ```
-####自定义控件来源
+###自定义控件来源
 ```
 nicepinner:  * https://github.com/arcadefire/nice-spinner
 customdatepicker *https://github.com/liuwan1992/CustomDatePicker
