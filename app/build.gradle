@@ -95,4 +95,6 @@ dependencies {
         transitive = true
     }
     implementation 'com.yalantis:ucrop:2.2.0'
+    //屏幕适配方案
+    implementation 'me.jessyan:autosize:1.1.2'
 }
