@@ -1,6 +1,8 @@
 package com.example.baseproject.app;
 
 
+import android.widget.RelativeLayout;
+
 import com.example.baseproject.mvp.RetrofitManager;
 
 /**
@@ -8,9 +10,10 @@ import com.example.baseproject.mvp.RetrofitManager;
  */
 public class BaseModel {
     //retrofit请求数据的管理类
-    public RetrofitManager retrofitManager;
+    public RetrofitManager retrofitManager,soulManager;
 
     public BaseModel() {
         retrofitManager = RetrofitManager.builder(Constans.douban);
+        soulManager= RetrofitManager.builder(Constans.soul);
     }
 }

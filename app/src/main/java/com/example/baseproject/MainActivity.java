@@ -12,15 +12,6 @@ import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
 public class MainActivity extends BaseActivity {
 
-    private static final String KEY_FRAGMENT = "key_fragment";
-    private static final String KEY_URL = "key_url";
-    private static final String KEY_TITLE = "key_title";
-    private static final int VALUE_FRAGMENT_HOME = 0;
-    private static final int VALUE_FRAGMENT_NOTCH_HELPER = 1;
-    private static final int VALUE_FRAGMENT_ARCH_TEST = 2;
-    private static final int VALUE_FRAGMENT_WEB_EXPLORER_TEST = 3;
-    private static final int VALUE_FRAGMENT_SURFACE_TEST = 4;
-
     @Override
     protected int getContextViewId() {
         return R.id.qmuidemo;

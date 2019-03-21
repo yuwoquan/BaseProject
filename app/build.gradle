@@ -72,7 +72,7 @@ dependencies {
     // 腾讯QMUI
     implementation 'com.qmuiteam:qmui:1.2.0'
 //    implementation 'com.qmuiteam:qmuilint:1.2.0'
-    implementation 'com.qmuiteam:arch:0.3.1'
+    implementation 'com.qmuiteam:arch:0.4.0'
     // 数据库     add library
     implementation 'org.greenrobot:greendao:3.2.2'
     implementation 'org.greenrobot:greendao-generator:3.2.2'
@@ -85,11 +85,11 @@ dependencies {
     //eventbus
     implementation 'org.greenrobot:eventbus:3.0.0'
     // 腾讯bugly
-    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
-    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+//    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+//    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
     implementation 'com.android.support:multidex:1.0.1'
-
-    implementation 'com.youth.banner:banner:1.4.10'
+//    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.pinguo-zhouwei:MZBannerView:v2.0.2'
     // 阿里 vlayout
     implementation('com.alibaba.android:vlayout:1.2.8@aar') {
         transitive = true
@@ -97,4 +97,5 @@ dependencies {
     implementation 'com.yalantis:ucrop:2.2.0'
     //屏幕适配方案
     implementation 'me.jessyan:autosize:1.1.2'
+
 }
