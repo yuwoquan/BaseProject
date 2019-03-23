@@ -1,12 +1,9 @@
 package com.example.baseproject;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.baseproject.mvp.ui.base.BaseActivity;
-import com.example.baseproject.mvp.ui.base.BaseFragment;
-import com.example.baseproject.ui.fragment.HomeFragment;
+import com.example.baseproject.ui.fragment.MainFragment;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
@@ -23,7 +20,7 @@ public class MainActivity extends BaseActivity {
         QMUIStatusBarHelper.translucent(this);
         QMUIStatusBarHelper.setStatusBarLightMode(this);
         if (savedInstanceState == null) {
-            QMUIFragment fragment = new HomeFragment();
+            QMUIFragment fragment = new MainFragment();
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(getContextViewId(), fragment, fragment.getClass().getSimpleName())

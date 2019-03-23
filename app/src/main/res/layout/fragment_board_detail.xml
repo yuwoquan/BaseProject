@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_color_blue"
+    tools:context=".ui.fragment.BoardDetailFragment">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mtopbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_title_color="@color/white"
+        app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
+        app:qmui_topbar_need_separator="false"/>
+    <android.support.v4.widget.NestedScrollView
+        android:background="@color/white"
+        android:layout_marginTop="?attr/qmui_topbar_height"
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                android:id="@+id/image"
+                android:clickable="false"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                app:qmui_border_color="?attr/qmui_config_color_gray_6"
+                app:qmui_border_width="0px"
+                app:qmui_corner_radius="8dp"
+                app:qmui_selected_border_color="?attr/qmui_config_color_gray_4"
+                app:qmui_selected_border_width="1px"
+                app:qmui_selected_mask_color="?attr/qmui_config_color_gray_8"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:id="@+id/msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="22dp"
+                android:textColor="#2943c7"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:text="网友评论"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+        android:descendantFocusability="blocksDescendants"
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</FrameLayout>

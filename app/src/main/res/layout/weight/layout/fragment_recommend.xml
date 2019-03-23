@@ -3,15 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1f1f1"
+    android:background="@color/app_color_blue"
     tools:context=".ui.fragment.RecommendFragment">
 
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mtopbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_title_color="#FFFF"
+        app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
+        app:qmui_topbar_need_separator="false"/>
 <android.support.v7.widget.RecyclerView
     android:id="@+id/recyclerview"
+    android:background="#f1f1f1"
+    android:layout_marginTop="?attr/qmui_topbar_height"
     android:layout_width="match_parent"
     android:layout_height="match_parent"/>
-
     <com.qmuiteam.qmui.widget.QMUIEmptyView
+        android:background="#f1f1f1"
+        android:layout_marginTop="?attr/qmui_topbar_height"
         android:id="@+id/emptyview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

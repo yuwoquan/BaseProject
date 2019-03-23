@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.widget.QMUIWindowInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragout"
+    android:background="@color/app_color_blue"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.LoginActivity">
+    <ImageView
+        android:id="@+id/imagebg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+    <!--<com.qmuiteam.qmui.widget.QMUITopBar-->
+    <!--android:id="@+id/topbar"-->
+    <!--android:visibility="gone"-->
+    <!--app:qmui_topbar_bg_color="@color/main_theme_color"-->
+    <!--app:qmui_topbar_title_color="@color/white"-->
+    <!--android:background="@color/qmui_config_color_transparent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/qmui_topbar_height"/>-->
+    <android.support.v4.widget.NestedScrollView
+        android:background="#8000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="20dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/hea"
+                android:src="@mipmap/heado"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--  Name Label -->
+            <android.support.design.widget.TextInputLayout
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:colorControlNormal="@color/white"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    app:colorControlNormal="@color/white"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/input_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword"
+                    android:hint="昵称" />
+            </android.support.design.widget.TextInputLayout>
+
+
+
+            <!--  Name Label -->
+            <android.support.design.widget.TextInputLayout
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:colorControlNormal="@color/white"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    app:colorControlNormal="@color/white"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/input_xingzuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword"
+                    android:hint="星座" />
+            </android.support.design.widget.TextInputLayout>
+            <!--  Name Label -->
+            <android.support.design.widget.TextInputLayout
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:colorControlNormal="@color/white"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    app:colorControlNormal="@color/white"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/input_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword"
+                    android:hint="家乡" />
+            </android.support.design.widget.TextInputLayout>
+            <!--  Name Label -->
+            <android.support.design.widget.TextInputLayout
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:colorControlNormal="@color/white"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    app:colorControlNormal="@color/white"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/input_school"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword"
+                    android:hint="学校" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:textColorHint="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+                <EditText
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textVisiblePassword"
+                    android:hint="个性签名"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:id="@+id/ll_date"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/transparent_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="出生日期："
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_selected_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                app:qmui_backgroundColor="#FFFFFF"
+                app:qmui_radiusBottomLeft="5dp"
+                app:qmui_radiusBottomRight="5dp"
+                app:qmui_radiusTopLeft="5dp"
+                app:qmui_radiusTopRight="5dp"
+                android:layout_marginTop="15dp"
+                app:qmui_borderWidth="0dp"
+                android:textColor="#000000"
+                android:id="@+id/btn_signup"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="12dp"
+                android:text="提交" />
+
+            <TextView
+                android:textColor="#FFFFFF"
+                android:id="@+id/link_login"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="Already a member? Login"
+                android:textSize="16dip" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</com.qmuiteam.qmui.widget.QMUIWindowInsetLayout>

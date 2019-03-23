@@ -37,4 +37,8 @@
     <color name="date_picker_divider">#11112233</color>
     <color name="date_picker_text_light">#59B29C</color>
     <color name="date_picker_text_dark">#333333</color>
+    <color name="white">#ffff</color>
+    <color name="mc">#c8ccd1</color>
+    <color name="cam">#35474b</color>
+    <color name="camtwo">#253238</color>
 </resources>

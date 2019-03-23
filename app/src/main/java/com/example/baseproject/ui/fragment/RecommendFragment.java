@@ -16,6 +16,7 @@ import com.example.baseproject.mvp.movie.MoviePresenter;
 import com.example.baseproject.mvp.movie.MovieView;
 import com.example.baseproject.mvp.ui.AbstractMvpFragment;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
+import com.qmuiteam.qmui.widget.QMUITopBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
 
 public class RecommendFragment extends AbstractMvpFragment<MovieView, MoviePresenter> implements MovieView {
 
-
+    @BindView(R.id.mtopbar) QMUITopBar mtopbar;
     @BindView(R.id.recyclerview) RecyclerView recyclerview;
     @BindView(R.id.emptyview) QMUIEmptyView emptyview;
     private List<InTheatersBean.SubjectsBean> subjectsBeanList=new ArrayList<>();
@@ -37,6 +38,7 @@ public class RecommendFragment extends AbstractMvpFragment<MovieView, MoviePrese
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_recommend, null);
         ButterKnife.bind(this, view);
+        setTopbar(mtopbar,"电影");
         emptyview.show(true);
         getPresenter().clickInthe();
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);

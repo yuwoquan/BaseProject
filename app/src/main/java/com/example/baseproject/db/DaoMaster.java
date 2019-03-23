@@ -22,15 +22,15 @@ public class DaoMaster extends AbstractDaoMaster {
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
         CommentBeanDao.createTable(db, ifNotExists);
-        LinsecensBeanDao.createTable(db, ifNotExists);
         HomeBeanDao.createTable(db, ifNotExists);
+        LinsecensBeanDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
         CommentBeanDao.dropTable(db, ifExists);
-        LinsecensBeanDao.dropTable(db, ifExists);
         HomeBeanDao.dropTable(db, ifExists);
+        LinsecensBeanDao.dropTable(db, ifExists);
     }
 
     /**
@@ -50,8 +50,8 @@ public class DaoMaster extends AbstractDaoMaster {
     public DaoMaster(Database db) {
         super(db, SCHEMA_VERSION);
         registerDaoClass(CommentBeanDao.class);
-        registerDaoClass(LinsecensBeanDao.class);
         registerDaoClass(HomeBeanDao.class);
+        registerDaoClass(LinsecensBeanDao.class);
     }
 
     public DaoSession newSession() {
