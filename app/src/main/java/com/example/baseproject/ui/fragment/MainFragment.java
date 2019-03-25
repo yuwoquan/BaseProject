@@ -33,10 +33,18 @@ public class MainFragment extends BaseFragment {
     private void initListView() {
         QMUICommonListItemView one = mGroupListView.createItemView("one");
         one.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
         QMUICommonListItemView two = mGroupListView.createItemView("two");
         two.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
         QMUICommonListItemView three = mGroupListView.createItemView("three");
         three.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
+        QMUICommonListItemView four = mGroupListView.createItemView("four");
+        four.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
+
+
         QMUIGroupListView.newSection(getContext())
                 .addItemView(one, new View.OnClickListener() {
                     @Override
@@ -54,6 +62,12 @@ public class MainFragment extends BaseFragment {
                     @Override
                     public void onClick(View view) {
                         startFragment(new BlackboardFragment());
+                    }
+                })
+                .addItemView(four, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startFragment(new ZhiyinFragment());
                     }
                 })
                 .addTo(mGroupListView);

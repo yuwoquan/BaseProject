@@ -30,6 +30,8 @@ public class GradeFragment extends BaseFragment {
     QMUIRoundButton btn_sure;
     @BindView(R.id.user_head)
     ImageView user_head;
+    @BindView(R.id.falsee) ImageView falsee;
+    @BindView(R.id.truee) ImageView truee;
 
 
     private void initView() {
@@ -45,10 +47,10 @@ public class GradeFragment extends BaseFragment {
             public void onClick(View view) {
 
                 Toast.makeText(MyApplication.getContext(), "打分成功！", Toast.LENGTH_SHORT).show();
-                TimerTask task =    new TimerTask() {
+                TimerTask task = new TimerTask() {
                     @Override
                     public void run() {
-                       popBackStack();
+                        popBackStack();
                     }
                 };
                 Timer timer = new Timer();
@@ -58,7 +60,7 @@ public class GradeFragment extends BaseFragment {
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                grade_num.setText(""+progress);
+                grade_num.setText("" + progress);
             }
 
             @Override
@@ -79,8 +81,23 @@ public class GradeFragment extends BaseFragment {
         View view = View.inflate(getActivity(), R.layout.fragment_grade, null);
         ButterKnife.bind(this, view);
         initView();
-        setTopbar(mtopbar,"用户打分");
+//        setTopbar(mtopbar, "用户打分");
+        mtopbar.setTitle("用户打分");
         setListener();
+        falsee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MyApplication.getContext(), "已取消！", Toast.LENGTH_SHORT).show();
+                popBackStack();
+            }
+        });
+        truee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MyApplication.getContext(), "打分成功！", Toast.LENGTH_SHORT).show();
+                popBackStack();
+            }
+        });
         return view;
     }
 }

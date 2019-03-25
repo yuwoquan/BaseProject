@@ -7,6 +7,7 @@
     android:background="#f1f1f1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.WorryFragment">
+
 <android.support.v4.widget.NestedScrollView
     android:focusableInTouchMode="true"
     android:layout_width="match_parent"

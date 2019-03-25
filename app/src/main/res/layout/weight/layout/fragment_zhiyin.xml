@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#8e67fe"
+    tools:context=".ui.fragment.ZhiyinFragment">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mtopbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_title_color="#FFFF"
+        app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
+        app:qmui_topbar_need_separator="false"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_marginTop="?attr/qmui_topbar_height"
+        android:layout_marginBottom="49dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.qmuiteam.qmui.layout.QMUILinearLayout
+            android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="8dp"
+            android:layout_marginTop="18dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#8e67fe"
+            android:id="@+id/qmui_layout"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:padding="4dp"
+            android:layout_marginBottom="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+            android:src="@drawable/voice"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp" />
+        <TextView
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:textSize="14dp"
+            android:text="长按录制，点击可播放"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:text="性别："
+                    android:id="@+id/sex"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    app:qmui_backgroundColor="@color/white"
+                    app:qmui_radiusBottomLeft="5dp"
+                    app:qmui_radiusBottomRight="5dp"
+                    app:qmui_radiusTopLeft="5dp"
+                    app:qmui_radiusTopRight="5dp"
+                    app:qmui_borderWidth="0dp"
+                    android:id="@+id/man"
+                    android:layout_toRightOf="@+id/sex"
+                    android:drawableLeft="@drawable/man"
+                    android:background="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/qmui_config_color_gray_4"
+                    android:text="男生\u3000"
+                    app:qmui_radius="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    app:qmui_backgroundColor="@color/white"
+                    app:qmui_radiusBottomLeft="5dp"
+                    app:qmui_radiusBottomRight="5dp"
+                    app:qmui_radiusTopLeft="5dp"
+                    app:qmui_radiusTopRight="5dp"
+                    app:qmui_borderWidth="0dp"
+                    android:layout_toRightOf="@+id/man"
+                    android:drawableLeft="@drawable/woman"
+                    android:background="@color/white"
+                    android:textSize="14sp"
+                    android:id="@+id/woman"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/qmui_config_color_gray_4"
+                    android:text="女生\u3000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:text="性格："
+                    android:id="@+id/xing"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    app:qmui_backgroundColor="@color/white"
+                    app:qmui_radiusBottomLeft="5dp"
+                    app:qmui_radiusBottomRight="5dp"
+                    app:qmui_radiusTopLeft="5dp"
+                    app:qmui_radiusTopRight="5dp"
+                    app:qmui_borderWidth="0dp"
+                    android:layout_toRightOf="@+id/xing"
+                    android:background="@color/white"
+                    android:textSize="14sp"
+                    android:id="@+id/qiang"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/qmui_config_color_gray_4"
+                    android:text="\u3000强势\u3000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    app:qmui_backgroundColor="@color/white"
+                    app:qmui_radiusBottomLeft="5dp"
+                    app:qmui_radiusBottomRight="5dp"
+                    app:qmui_radiusTopLeft="5dp"
+                    app:qmui_radiusTopRight="5dp"
+                    app:qmui_borderWidth="0dp"
+                    app:qmui_radius="5dp"
+                    android:layout_toRightOf="@+id/qiang"
+                    android:id="@+id/ruo"
+                    android:background="@color/white"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/qmui_config_color_gray_4"
+                    android:text="\u3000弱势\u3000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp" />
+        </RelativeLayout>
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                app:qmui_backgroundColor="@color/white"
+                app:qmui_radiusBottomLeft="5dp"
+                app:qmui_radiusBottomRight="5dp"
+                app:qmui_radiusTopLeft="5dp"
+                app:qmui_radiusTopRight="5dp"
+                app:qmui_borderWidth="0dp"
+                android:layout_toRightOf="@+id/qiang"
+                android:id="@+id/ceyice"
+                android:background="@color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#8e67fe"
+                android:text="\u3000测一测\u3000"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+    <com.qmuiteam.qmui.widget.QMUITabSegment
+        android:id="@+id/tabs"
+        android:layout_gravity="bottom"
+        android:background="?attr/qmui_list_item_bg_with_border_top"
+        android:textSize="12sp"
+        app:qmui_tab_icon_position="top"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"/>
+</FrameLayout>
