@@ -36,7 +36,6 @@
         <item name="colorControlNormal">@color/hin</item><!--默认显示TextInputLayout下划线的颜色-->
 
 
-
     </style>
 
     <style name="QDtextAppearanceListItem">

@@ -1,6 +1,7 @@
 package com.example.baseproject.ui.fragment;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,6 +13,7 @@ import com.example.baseproject.MyApplication;
 import com.example.baseproject.R;
 import com.example.baseproject.adapter.XinshiAdapter;
 import com.example.baseproject.enity.XinshiBean;
+import com.example.baseproject.eventbus.MessageEvent;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.BaoMingFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.MyReleaseFragment;
@@ -21,6 +23,8 @@ import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
 import com.qmuiteam.qmui.widget.QMUIViewPager;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +39,7 @@ public class XinshiFragment extends BaseFragment {
     @BindView(R.id.recyclerview) RecyclerView recyclerview;
     @BindView(R.id.pager) QMUIViewPager mViewPager;
     @BindView(R.id.tabs) QMUITabSegment mTabSegment;
-
+    @BindView(R.id.btn) FloatingActionButton floatingActionButton;
     private List<XinshiBean> xinshiBeans;
     private static final String TAG = "XinshiFragment";
     private LinearLayoutManager linearLayoutManager;
@@ -48,6 +52,12 @@ public class XinshiFragment extends BaseFragment {
             @Override
             public void onScrimsStateChange(boolean shown) {
                 Log.e(TAG, "onScrimsStateChange: " + shown);
+            }
+        });
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startFragment(new PostFragment());
             }
         });
         linearLayoutManager =new LinearLayoutManager(MyApplication.getContext());
@@ -77,6 +87,8 @@ public class XinshiFragment extends BaseFragment {
                 Bundle bundle=new Bundle();
                 first=xinshiAdapter.getData().get(position).getJingxuan();
                 two=xinshiAdapter.getData().get(position).getNewxuan();
+//                EventBus.getDefault().register(this);
+                EventBus.getDefault().postSticky(new MessageEvent(first,two));
                 Log.e(TAG, "onItemClick: "+first+two );
                 bundle.putSerializable("all",xinshiAdapter.getData().get(position));
                 XinshiDetailFragment xinshiDetailFragment=new XinshiDetailFragment();

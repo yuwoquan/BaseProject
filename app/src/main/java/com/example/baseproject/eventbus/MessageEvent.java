@@ -21,12 +21,12 @@ public class MessageEvent {
         this.baseTitle = baseTitle;
     }
 
-    private String baseUrl;
+    public String baseUrl;
 
     public MessageEvent(String baseUrl, String baseTitle) {
         this.baseUrl = baseUrl;
         this.baseTitle = baseTitle;
     }
 
-    private String baseTitle;
+    public String baseTitle;
 }

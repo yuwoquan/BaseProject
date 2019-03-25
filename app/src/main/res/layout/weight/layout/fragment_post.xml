@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/app_color_blue"
+    tools:context=".ui.fragment.PostFragment">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:fitsSystemWindows="true"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_title_color="@color/white"
+        app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
+        app:qmui_topbar_need_separator="false"/>
+<LinearLayout
+    android:layout_marginTop="?attr/qmui_topbar_height"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.baseproject.utils.weight.LinedEditText
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        app:ce_maxLength="500"
+        app:ce_edit_text_size="16px"
+        app:ce_count_text_size="16px"
+        app:ce_countMode="Percentage"
+        app:ce_hint="这一刻想法..."
+        android:id="@+id/liedtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="匿名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+</LinearLayout>
+</FrameLayout>

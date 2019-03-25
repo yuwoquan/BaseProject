@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.XinshiFragment">
 
     <android.support.design.widget.AppBarLayout
+        android:fitsSystemWindows="true"
         android:id="@+id/abl_test_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,14 +18,17 @@
         app:elevation="0dp">
 
         <com.example.baseproject.utils.weight.XCollapsingToolbarLayout
+            app:statusBarScrim="@color/white"
+            android:fitsSystemWindows="true"
             android:id="@+id/ctl_test_bar"
             android:layout_width="match_parent"
-            android:layout_height="396dp"
+            android:layout_height="374dp"
             app:contentScrim="@color/white"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:scrimVisibleHeightTrigger="100dp">
 
             <ImageView
+                android:fitsSystemWindows="true"
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:paddingTop="0dp"
@@ -33,43 +38,44 @@
 
             <RelativeLayout
                 android:id="@+id/layout"
-                android:background="@color/white"
-                android:layout_marginTop="200dp"
                 android:layout_width="match_parent"
-                android:layout_height="160dp">
+                android:layout_height="160dp"
+                android:layout_marginTop="200dp"
+                android:background="@color/white">
 
                 <TextView
-                    android:layout_marginTop="8dp"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="#000000"
-                    android:text="心事圈"
                     android:id="@+id/quan"
-                    android:layout_marginLeft="16dp"
-                    android:layout_alignParentLeft="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="心事圈"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:layout_marginTop="6dp"
-                    android:textSize="14sp"
-                    android:textColor="#A5A3A3"
-                    android:text="更多"
-                    android:layout_marginRight="10dp"
-                    android:layout_alignParentRight="true"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="10dp"
+                    android:text="更多"
+                    android:textColor="#A5A3A3"
+                    android:textSize="14sp" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerview"
-                    android:layout_below="@+id/quan"
-                    android:layout_marginTop="8dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quan"
+                    android:layout_marginTop="8dp" />
 
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
+
                 android:id="@+id/t_test_title"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
@@ -91,7 +97,6 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:visibility="gone"
                         android:id="@+id/tv_test_address"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -99,7 +104,8 @@
                         android:gravity="center_vertical"
                         android:text="地区"
                         android:textColor="@color/white"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/tv_test_search"
@@ -130,7 +136,7 @@
         <com.qmuiteam.qmui.widget.QMUITabSegment
             android:layout_marginLeft="15dp"
             android:id="@+id/tabs"
-            android:background="?attr/qmui_list_item_bg_with_border_top"
+            android:background="@color/white"
             android:textSize="12sp"
             app:qmui_tab_icon_position="top"
             app:qmui_tab_has_indicator="true"
@@ -141,6 +147,18 @@
             android:id="@+id/pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </LinearLayout>
 
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="17dp"
+        android:id="@+id/btn"
+        app:backgroundTint="#2AB8D1"
+        app:rippleColor="#FFFFFF"
+        android:src="@drawable/write"
+        android:elevation="8dp"
+        app:layout_anchor="@id/pager"
+        app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>

@@ -24,8 +24,8 @@ public class DaoMaster extends AbstractDaoMaster {
         CommentBeanDao.createTable(db, ifNotExists);
         LinsecensBeanDao.createTable(db, ifNotExists);
         HomeBeanDao.createTable(db, ifNotExists);
-        ZhuboBeanDao.createTable(db, ifNotExists);
         MyReleaseBeanDao.createTable(db, ifNotExists);
+        ZhuboBeanDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
@@ -33,8 +33,8 @@ public class DaoMaster extends AbstractDaoMaster {
         CommentBeanDao.dropTable(db, ifExists);
         LinsecensBeanDao.dropTable(db, ifExists);
         HomeBeanDao.dropTable(db, ifExists);
-        ZhuboBeanDao.dropTable(db, ifExists);
         MyReleaseBeanDao.dropTable(db, ifExists);
+        ZhuboBeanDao.dropTable(db, ifExists);
     }
 
     /**
@@ -56,8 +56,8 @@ public class DaoMaster extends AbstractDaoMaster {
         registerDaoClass(CommentBeanDao.class);
         registerDaoClass(LinsecensBeanDao.class);
         registerDaoClass(HomeBeanDao.class);
-        registerDaoClass(ZhuboBeanDao.class);
         registerDaoClass(MyReleaseBeanDao.class);
+        registerDaoClass(ZhuboBeanDao.class);
     }
 
     public DaoSession newSession() {

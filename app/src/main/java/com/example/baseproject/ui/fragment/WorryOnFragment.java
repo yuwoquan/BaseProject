@@ -16,9 +16,14 @@ import com.example.baseproject.MyApplication;
 import com.example.baseproject.R;
 import com.example.baseproject.adapter.WorryAdapter;
 import com.example.baseproject.enity.WorryBean;
+import com.example.baseproject.eventbus.MessageEvent;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
 import com.google.gson.Gson;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -46,6 +51,7 @@ public class WorryOnFragment extends BaseFragment {
         args.putInt(PATH, position);
         WorryOnFragment fragment = new WorryOnFragment();
         fragment.setArguments(args);
+        Log.e(TAG, "newInstance: " );
         return fragment;
     }
 
@@ -54,23 +60,13 @@ public class WorryOnFragment extends BaseFragment {
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_worry_on,null);
         ButterKnife.bind(this, view);
+        EventBus.getDefault().register(this);
         Log.e(TAG, "onCreateView: " );
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerview.setLayoutManager(staggeredGridLayoutManager);
         part = getArguments().getInt(PATH);
         Log.e(TAG, "onCreateView: "+part );
-        switch (part){
-            case 0:
-                Log.e(TAG, "onCreateView: "+two );
-                getJson(two);
-                break;
-            case 1:
-                Log.e(TAG, "onCreateView: "+first );
-                getJson(first);
-                break;
-                default:
-                    break;
-        }
+
         for (int i = 0; i <worryBean.getList().size() ; i++) {
             worryBeans.add(worryBean.getList().get(i));
         }
@@ -95,5 +91,26 @@ public class WorryOnFragment extends BaseFragment {
         }
         worryBean = new Gson().fromJson(stringBuilder.toString(), WorryBean.class);
         return worryBean;
+    }
+
+    @Subscribe(threadMode = ThreadMode.POSTING ,sticky = true)
+    public void onMoonEvent(MessageEvent messageEvent){
+        switch (part){
+            case 0:
+                getJson(messageEvent.getBaseTitle());
+                break;
+            case 1:
+                getJson(messageEvent.getBaseUrl());
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        EventBus.getDefault().unregister(this);
     }
 }
