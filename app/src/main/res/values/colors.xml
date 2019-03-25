@@ -41,4 +41,6 @@
     <color name="mc">#c8ccd1</color>
     <color name="cam">#35474b</color>
     <color name="camtwo">#253238</color>
+    <color name="text_gray">#8a8a8a</color>
+    <color name="hin">#31DDDD</color>
 </resources>

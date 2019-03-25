@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
 import com.example.baseproject.ui.fragment.RecommendFragment;
+import com.example.baseproject.ui.fragment.dianjingbao.DianJingBaseFragment;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.qmuiteam.qmui.widget.grouplist.QMUICommonListItemView;
 import com.qmuiteam.qmui.widget.grouplist.QMUIGroupListView;
@@ -46,6 +47,9 @@ public class MainFragment extends BaseFragment {
         QMUICommonListItemView five = mGroupListView.createItemView("five");
         five.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
 
+        QMUICommonListItemView six = mGroupListView.createItemView("six");
+        six.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
         QMUIGroupListView.newSection(getContext())
                 .addItemView(one, new View.OnClickListener() {
                     @Override
@@ -75,6 +79,12 @@ public class MainFragment extends BaseFragment {
                     @Override
                     public void onClick(View view) {
                         startFragment(new ZhuboFragment());
+                    }
+                })
+                .addItemView(six, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startFragment(new DianJingBaseFragment());
                     }
                 })
                 .addTo(mGroupListView);

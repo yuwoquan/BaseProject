@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#289DFA"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.dianjingbao.OpenBlackBaseFragment">
+
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mtopbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/qmui_topbar_height"
+        app:qmui_layout_collapseMode="pin"
+        app:qmui_topbar_title_color="#FFFF"
+        app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
+        app:qmui_topbar_need_separator="false"/>
+    <com.qmuiteam.qmui.widget.QMUITabSegment
+        android:id="@+id/tabs"
+        android:background="?attr/qmui_list_item_bg_with_border_top"
+        android:textSize="12sp"
+        app:qmui_tab_icon_position="top"
+        app:qmui_tab_has_indicator="true"
+        app:qmui_tab_indicator_top="false"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"/>
+    <com.qmuiteam.qmui.widget.QMUIViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+        android:layout_centerHorizontal="true"
+        app:qmui_backgroundColor="@color/qmui_config_color_transparent"
+        app:qmui_radiusBottomLeft="20dp"
+        app:qmui_radiusBottomRight="20dp"
+        app:qmui_radiusTopLeft="20dp"
+        app:qmui_radiusTopRight="20dp"
+        android:layout_marginTop="15dp"
+        app:qmui_borderWidth="2dp"
+        app:qmui_borderColor="@color/app_color_blue"
+        android:text="创建活动"
+        android:textColor="@color/app_color_blue"
+        android:id="@+id/signout"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+</RelativeLayout>
