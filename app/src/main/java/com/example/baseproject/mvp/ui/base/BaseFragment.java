@@ -13,7 +13,7 @@ import com.qmuiteam.qmui.widget.QMUITopBar;
 public abstract class BaseFragment extends QMUIFragment {
 
     public boolean isLocalCHange=false;
-
+    public String first,two;
     public BaseFragment() {
     }
 

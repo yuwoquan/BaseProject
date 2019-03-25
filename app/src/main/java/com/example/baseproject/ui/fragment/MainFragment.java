@@ -50,6 +50,9 @@ public class MainFragment extends BaseFragment {
         QMUICommonListItemView six = mGroupListView.createItemView("six");
         six.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
 
+        QMUICommonListItemView seven = mGroupListView.createItemView("seven");
+        seven.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
         QMUIGroupListView.newSection(getContext())
                 .addItemView(one, new View.OnClickListener() {
                     @Override
@@ -85,6 +88,12 @@ public class MainFragment extends BaseFragment {
                     @Override
                     public void onClick(View view) {
                         startFragment(new DianJingBaseFragment());
+                    }
+                })
+                .addItemView(seven, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startFragment(new XinshiFragment());
                     }
                 })
                 .addTo(mGroupListView);
