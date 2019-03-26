@@ -1,10 +1,12 @@
 package com.example.baseproject.ui.fragment;
 
 import android.graphics.Color;
+import android.os.Looper;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.baseproject.MyApplication;
 import com.example.baseproject.R;
@@ -14,11 +16,17 @@ import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButtonDrawable;
 
+import java.util.concurrent.TimeUnit;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 
 
 public class ZhiyinFragment extends BaseFragment {
@@ -36,7 +44,9 @@ public class ZhiyinFragment extends BaseFragment {
     private float mShadowAlpha = 0.48f;
     private int mShadowElevationDp = 8;
     private int mRadius=28;
-
+    private QMUITipDialog tipDialog;
+    private Boolean isBoy=true;
+    private Boolean isQiang=true;
     @Override
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhiyin, null);
@@ -51,9 +61,45 @@ public class ZhiyinFragment extends BaseFragment {
         final QMUIRoundButtonDrawable bgthree = (QMUIRoundButtonDrawable) qiang.getBackground();
         final QMUIRoundButtonDrawable bgfour = (QMUIRoundButtonDrawable) ruo.getBackground();
 
+        ceyice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isBoy){
+                    Toast.makeText(MyApplication.getContext(), "请选择性别", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (isQiang){
+                    Toast.makeText(MyApplication.getContext(), "请选择性格", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                tipDialog = new QMUITipDialog.Builder(getContext())
+                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+                        .setTipWord("正在测试")
+                        .create();
+                tipDialog.show();
+                Observable.timer(3, TimeUnit.SECONDS)
+                        .subscribeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Consumer<Long>() {
+                            @Override
+                            public void accept(Long aLong) throws Exception {
+                                Looper.prepare();
+                                tipDialog.dismiss();
+                                getActivity().runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(MyApplication.getContext(), "正太音～～", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        });
+            }
+        });
+
+
         man.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isBoy=false;
                 bgone.setColor(Color.parseColor("#3FD0AD"));
                 bgtwo.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -61,6 +107,7 @@ public class ZhiyinFragment extends BaseFragment {
         woman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isBoy=false;
                 bgtwo.setColor(Color.parseColor("#EE85C1"));
                 bgone.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -68,6 +115,7 @@ public class ZhiyinFragment extends BaseFragment {
         qiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isQiang=false;
                 bgthree.setColor(Color.parseColor("#31BDF3"));
                 bgfour.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -75,6 +123,7 @@ public class ZhiyinFragment extends BaseFragment {
         ruo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isQiang=false;
                 bgfour.setColor(Color.parseColor("#31BDF3"));
                 bgthree.setColor(Color.parseColor("#FFFFFF"));
             }

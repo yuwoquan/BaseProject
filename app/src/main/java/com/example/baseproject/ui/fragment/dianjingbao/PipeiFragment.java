@@ -4,11 +4,13 @@ import android.content.DialogInterface;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.baseproject.MyApplication;
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
+import com.example.baseproject.utils.weight.TimeDialog;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
@@ -37,6 +39,7 @@ public class PipeiFragment extends BaseFragment {
     final String[] itemthree = new String[]{"萌新", "老司机", "一般般"};
     final String[] itemfour = new String[]{"少年音", "正太音", "萝莉音"};
     private QMUITipDialog tipDialog;
+    private TimeDialog timeDialog;
     @Override
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_pipei, null);
@@ -46,18 +49,24 @@ public class PipeiFragment extends BaseFragment {
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tipDialog = new QMUITipDialog.Builder(getContext())
-                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
-                        .setTipWord("正在匹配")
-                        .create();
-                tipDialog.show();
-                Observable.timer(5, TimeUnit.SECONDS)
+                timeDialog=new TimeDialog(getActivity());
+                final WindowManager.LayoutParams params = timeDialog.getWindow().getAttributes();
+                params.width = 600;
+                params.height = 600;
+                timeDialog.getWindow().setAttributes(params);
+                timeDialog.show();
+//                tipDialog = new QMUITipDialog.Builder(getContext())
+//                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
+//                        .setTipWord("正在匹配")
+//                        .create();
+//                tipDialog.show();
+                Observable.timer(15, TimeUnit.SECONDS)
                         .subscribeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Consumer<Long>() {
                             @Override
                             public void accept(Long aLong) throws Exception {
                                 Looper.prepare();
-                                tipDialog.dismiss();
+                                timeDialog.dismiss();
                                 getActivity().runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
