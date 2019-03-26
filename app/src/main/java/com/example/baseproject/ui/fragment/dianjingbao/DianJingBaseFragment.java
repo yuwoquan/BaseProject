@@ -1,19 +1,11 @@
 package com.example.baseproject.ui.fragment.dianjingbao;
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
-import com.example.baseproject.ui.fragment.RecommendFragment;
-import com.example.baseproject.ui.fragment.TestFragment;
-import com.example.baseproject.ui.fragment.WorryFragment;
 import com.example.baseproject.utils.weight.NoScrollViewPager;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;

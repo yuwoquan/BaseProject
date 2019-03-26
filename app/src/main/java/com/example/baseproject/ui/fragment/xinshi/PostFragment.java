@@ -1,4 +1,4 @@
-package com.example.baseproject.ui.fragment;
+package com.example.baseproject.ui.fragment.xinshi;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;

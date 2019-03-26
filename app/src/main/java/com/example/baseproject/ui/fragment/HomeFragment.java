@@ -1,24 +1,17 @@
 package com.example.baseproject.ui.fragment;
 
-import android.content.Context;
-import android.net.Uri;
-import android.os.Bundle;
-import android.app.Fragment;
-import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
+import com.example.baseproject.ui.fragment.xinshi.WorryFragment;
 import com.example.baseproject.utils.weight.NoScrollViewPager;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
 import com.qmuiteam.qmui.util.QMUIResHelper;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
-import com.qmuiteam.qmui.widget.QMUIViewPager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

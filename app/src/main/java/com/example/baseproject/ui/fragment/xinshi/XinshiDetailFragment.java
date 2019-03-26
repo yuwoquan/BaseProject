@@ -1,4 +1,4 @@
-package com.example.baseproject.ui.fragment;
+package com.example.baseproject.ui.fragment.xinshi;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;

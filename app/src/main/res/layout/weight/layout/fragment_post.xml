@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/app_color_blue"
-    tools:context=".ui.fragment.PostFragment">
+    tools:context=".ui.fragment.xinshi.PostFragment">
 
     <com.qmuiteam.qmui.widget.QMUITopBar
         android:fitsSystemWindows="true"

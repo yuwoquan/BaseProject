@@ -1,4 +1,4 @@
-package com.example.baseproject.ui.fragment;
+package com.example.baseproject.ui.fragment.xinshi;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.baseproject.MyApplication;
@@ -35,6 +36,7 @@ import butterknife.ButterKnife;
 
 public class XinshiFragment extends BaseFragment {
 
+    @BindView(R.id.more) TextView more;
     @BindView(R.id.ctl_test_bar) XCollapsingToolbarLayout ctlTestBar;
     @BindView(R.id.recyclerview) RecyclerView recyclerview;
     @BindView(R.id.pager) QMUIViewPager mViewPager;
@@ -77,7 +79,12 @@ public class XinshiFragment extends BaseFragment {
         xinshiBeans.add(new XinshiBean("问题小孩", "被视为有问题的小孩可能有巨大的潜能", "wentixiaohai.json", R.drawable.wentixiaohai, "wentixiaohainew.json",9743));
         xinshiBeans.add(new XinshiBean("父母冲突", "每一个成长中的我们都绕不开父母的关心", "fuwuchongtu.json", R.drawable.fumuchongtu, "fuwuchongtunew.json",5432));
         xinshiBeans.add(new XinshiBean("胜退小三", "在爱情的争夺中，掌握充分的主动权", "shengtuixiaosan.json", R.drawable.shengtuixiaosan, "fuwuchongtunew.json",6432));
-
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startFragment(new MoreFragment());
+            }
+        });
         xinshiAdapter=new XinshiAdapter(xinshiBeans);
         recyclerview.setAdapter(xinshiAdapter);
 
@@ -109,30 +116,28 @@ public class XinshiFragment extends BaseFragment {
             public QMUIFragment createFragment(int position) {
                 switch (position) {
                     case 0:
-                        return new BaoMingFragment();
+                        return new BlankOneFragment();
                     case 1:
-                        return new MyReleaseFragment();
-                    case 2:
+
                     default:
-                        return new NearByClubFragment();
+                        return new BlankTwoFragment();
                 }
             }
 
             @Override
             public int getCount() {
-                return 3;
+                return 2;
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
                 switch (position) {
                     case 0:
-                        return "报名";
+                        return "最新";
                     case 1:
-                        return "我的发布";
-                    case 2:
+
                     default:
-                        return "附近网吧";
+                        return "精选";
                 }
             }
         };

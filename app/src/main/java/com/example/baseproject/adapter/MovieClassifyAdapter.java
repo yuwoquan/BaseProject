@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.view.ViewGroup;
 
-import com.example.baseproject.ui.fragment.WorryOnFragment;
+import com.example.baseproject.ui.fragment.xinshi.WorryOnFragment;
 
 
 /**

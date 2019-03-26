@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.XinshiFragment">
+    tools:context=".ui.fragment.xinshi.XinshiFragment">
 
     <android.support.design.widget.AppBarLayout
         android:fitsSystemWindows="true"
@@ -59,9 +59,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="10dp"
                     android:text="更多"
+                    android:id="@+id/more"
                     android:textColor="#A5A3A3"
                     android:textSize="14sp" />
 

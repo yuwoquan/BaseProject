@@ -1,4 +1,4 @@
-package com.example.baseproject.ui.fragment;
+package com.example.baseproject.ui.fragment.xinshi;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;

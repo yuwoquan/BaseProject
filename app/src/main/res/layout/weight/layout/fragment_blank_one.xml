@@ -3,13 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.xinshi.WorryOnFragment">
-
+    tools:context=".ui.fragment.xinshi.BlankOneFragment">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:overScrollMode="never"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-
 
 </FrameLayout>
