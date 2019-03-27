@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         <ImageView
+            android:id="@+id/im"
             android:src="@drawable/voice"
             android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal"
@@ -48,7 +49,7 @@
             android:textColor="#FFFFFF"
             android:layout_marginTop="10dp"
             android:textSize="14dp"
-            android:text="长按录制，点击可播放"
+            android:text="点击录制声音"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

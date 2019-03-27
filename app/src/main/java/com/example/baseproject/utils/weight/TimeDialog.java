@@ -2,12 +2,14 @@ package com.example.baseproject.utils.weight;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Chronometer;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.baseproject.R;
 import com.qmuiteam.qmui.layout.QMUILinearLayout;
@@ -22,34 +24,38 @@ public class TimeDialog extends RxDialog {
     private float mShadowAlpha = 0.25f;
     private int mShadowElevationDp = 6;
     private int mRadius;
-    public TimeDialog(Context context, int themeResId) {
+    public TimeDialog(Context context, int themeResId,String txt,String color) {
         super(context, themeResId);
-        init();
+        init(txt,color);
     }
 
-    public TimeDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
+    public TimeDialog(Context context, boolean cancelable, OnCancelListener cancelListener,String txt,String color) {
         super(context, cancelable, cancelListener);
-        init();
+        init(txt,color);
     }
 
-    public TimeDialog(Context context) {
+    public TimeDialog(Context context,String txt,String color) {
         super(context);
-        init();
+        init(txt,color);
     }
 
-    public TimeDialog(Activity activity){
+    public TimeDialog(Activity activity,String txt,String color){
         super(activity);
-        init();
+        init(txt,color);
     }
-    public TimeDialog(Context context, float alpha, int gravity) {
+    public TimeDialog(Context context, float alpha, int gravity,String txt,String color) {
         super(context, alpha, gravity);
-        init();
+        init(txt,color);
     }
 
-    private void init() {
+    private void init(String txt,String color) {
 
         View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.time_dialog, null);
         Chronometer chronometer=dialogView.findViewById(R.id.timee);
+        TextView textView=dialogView.findViewById(R.id.tex);
+        textView.setText(txt);
+        textView.setTextColor(Color.parseColor(color));
+        chronometer.setTextColor(Color.parseColor(color));
         chronometer.start();
         mRadius = QMUIDisplayHelper.dp2px(getContext(), 6);
         QMUILinearLayout  mTestLayout=dialogView.findViewById(R.id.lo);

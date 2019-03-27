@@ -49,17 +49,13 @@ public class PipeiFragment extends BaseFragment {
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                timeDialog=new TimeDialog(getActivity());
+                timeDialog=new TimeDialog(getActivity(),"正在匹配","#FE6D4B");
                 final WindowManager.LayoutParams params = timeDialog.getWindow().getAttributes();
                 params.width = 600;
                 params.height = 600;
                 timeDialog.getWindow().setAttributes(params);
                 timeDialog.show();
-//                tipDialog = new QMUITipDialog.Builder(getContext())
-//                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)
-//                        .setTipWord("正在匹配")
-//                        .create();
-//                tipDialog.show();
+
                 Observable.timer(15, TimeUnit.SECONDS)
                         .subscribeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Consumer<Long>() {

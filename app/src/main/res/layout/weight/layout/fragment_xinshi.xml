@@ -134,10 +134,10 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <com.qmuiteam.qmui.widget.QMUITabSegment
+        <com.example.baseproject.utils.weight.TabCustomView
             android:layout_marginLeft="15dp"
             android:id="@+id/tabs"
-            android:background="@color/white"
+            android:background="@color/qmui_config_color_transparent"
             android:textSize="12sp"
             app:qmui_tab_icon_position="top"
             app:qmui_tab_has_indicator="true"

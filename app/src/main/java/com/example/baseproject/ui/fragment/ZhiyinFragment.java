@@ -5,12 +5,15 @@ import android.os.Looper;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.baseproject.MyApplication;
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
+import com.example.baseproject.utils.weight.TimeDialog;
 import com.qmuiteam.qmui.layout.QMUILinearLayout;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
@@ -41,12 +44,15 @@ public class ZhiyinFragment extends BaseFragment {
     @BindView(R.id.ruo) QMUIRoundButton ruo;
     @BindView(R.id.ceyice) QMUIRoundButton ceyice;
     @BindView(R.id.qmui_layout) QMUILinearLayout qmuiLayout;
+    @BindView(R.id.im) ImageView im;
     private float mShadowAlpha = 0.48f;
     private int mShadowElevationDp = 8;
-    private int mRadius=28;
+    private int mRadius = 28;
     private QMUITipDialog tipDialog;
-    private Boolean isBoy=true;
-    private Boolean isQiang=true;
+    private Boolean isBoy = true;
+    private Boolean isQiang = true;
+    private TimeDialog timeDialog;
+
     @Override
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_zhiyin, null);
@@ -64,11 +70,11 @@ public class ZhiyinFragment extends BaseFragment {
         ceyice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isBoy){
+                if (isBoy) {
                     Toast.makeText(MyApplication.getContext(), "请选择性别", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (isQiang){
+                if (isQiang) {
                     Toast.makeText(MyApplication.getContext(), "请选择性格", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -95,11 +101,21 @@ public class ZhiyinFragment extends BaseFragment {
             }
         });
 
-
+        im.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                timeDialog=new TimeDialog(getActivity(),"正在录音","#FFCF47");
+                final WindowManager.LayoutParams params = timeDialog.getWindow().getAttributes();
+                params.width = 600;
+                params.height = 600;
+                timeDialog.getWindow().setAttributes(params);
+                timeDialog.show();
+            }
+        });
         man.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isBoy=false;
+                isBoy = false;
                 bgone.setColor(Color.parseColor("#3FD0AD"));
                 bgtwo.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -107,7 +123,7 @@ public class ZhiyinFragment extends BaseFragment {
         woman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isBoy=false;
+                isBoy = false;
                 bgtwo.setColor(Color.parseColor("#EE85C1"));
                 bgone.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -115,7 +131,7 @@ public class ZhiyinFragment extends BaseFragment {
         qiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isQiang=false;
+                isQiang = false;
                 bgthree.setColor(Color.parseColor("#31BDF3"));
                 bgfour.setColor(Color.parseColor("#FFFFFF"));
             }
@@ -123,7 +139,7 @@ public class ZhiyinFragment extends BaseFragment {
         ruo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isQiang=false;
+                isQiang = false;
                 bgfour.setColor(Color.parseColor("#31BDF3"));
                 bgthree.setColor(Color.parseColor("#FFFFFF"));
             }

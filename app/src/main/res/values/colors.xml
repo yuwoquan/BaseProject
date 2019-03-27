@@ -43,4 +43,15 @@
     <color name="camtwo">#253238</color>
     <color name="text_gray">#8a8a8a</color>
     <color name="hin">#31DDDD</color>
+
+    <color name="background_my_material_light">@color/material_grey_50</color>
+    <color name="background_my_material_grey">#ededed</color>
+    <color name="pureWhite">#ffffff</color>
+    <color name="primary_text">#212121</color>
+    <color name="textHint">#88888888</color>
+    <color name="iconCover">#cc979797</color>
+    <color name="iconCoverDark">#cc393939</color>
+    <color name="colorAccent">#00BCD4</color>
+    <color name="dot_hong">#F14343</color>
+    <color name="text_bottom_comment">#69D53E</color>
 </resources>

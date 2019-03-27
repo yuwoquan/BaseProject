@@ -10,6 +10,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mtopbar"
+        android:layout_marginBottom="40dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/qmui_topbar_height"
         app:qmui_layout_collapseMode="pin"
@@ -76,4 +77,33 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:background="#fccc"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+      <TextView
+          android:layout_centerInParent="true"
+          android:textSize="18sp"
+          android:textColor="#ffff"
+          android:layout_marginLeft="40dp"
+          android:id="@+id/text"
+          android:hint="\u3000你的想法值得被关注"
+          android:drawableLeft="@drawable/write"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:text="评论"
+            android:id="@+id/com"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="#fccc"
+            android:background="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 </FrameLayout>

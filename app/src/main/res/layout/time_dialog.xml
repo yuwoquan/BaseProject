@@ -23,6 +23,7 @@
     <TextView
         android:layout_gravity="center"
         android:text="正在匹配"
+        android:id="@+id/tex"
         android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:textColor="@color/app_color_blue"

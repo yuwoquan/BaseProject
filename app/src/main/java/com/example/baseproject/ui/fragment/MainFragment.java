@@ -6,6 +6,8 @@ import android.view.View;
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.DianJingBaseFragment;
+import com.example.baseproject.ui.fragment.dianjingbao.OpenBlackBaseFragment;
+import com.example.baseproject.ui.fragment.dianjingbao.PipeiFragment;
 import com.example.baseproject.ui.fragment.xinshi.XinshiFragment;
 import com.qmuiteam.qmui.widget.QMUITopBar;
 import com.qmuiteam.qmui.widget.grouplist.QMUICommonListItemView;
@@ -46,11 +48,14 @@ public class MainFragment extends BaseFragment {
         QMUICommonListItemView five = mGroupListView.createItemView("粉丝群");
         five.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
 
-        QMUICommonListItemView six = mGroupListView.createItemView("电竞宝");
+        QMUICommonListItemView six = mGroupListView.createItemView("真实匹配");
         six.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
 
         QMUICommonListItemView seven = mGroupListView.createItemView("心事圈");
         seven.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
+
+        QMUICommonListItemView eight = mGroupListView.createItemView("电竞宝");
+        eight.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
 
         QMUIGroupListView.newSection(getContext())
                 .addItemView(one, new View.OnClickListener() {
@@ -86,13 +91,19 @@ public class MainFragment extends BaseFragment {
                 .addItemView(six, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        startFragment(new DianJingBaseFragment());
+                        startFragment(new PipeiFragment());
                     }
                 })
                 .addItemView(seven, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         startFragment(new XinshiFragment());
+                    }
+                })
+                .addItemView(eight, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startFragment(new OpenBlackBaseFragment());
                     }
                 })
                 .addTo(mGroupListView);

@@ -2,6 +2,7 @@ package com.example.baseproject.ui.fragment.xinshi;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,9 +20,12 @@ import com.example.baseproject.mvp.ui.base.BaseFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.BaoMingFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.MyReleaseFragment;
 import com.example.baseproject.ui.fragment.dianjingbao.NearByClubFragment;
+
+import com.example.baseproject.utils.weight.TabCustomView;
 import com.example.baseproject.utils.weight.XCollapsingToolbarLayout;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
+
 import com.qmuiteam.qmui.widget.QMUITabSegment;
 import com.qmuiteam.qmui.widget.QMUIViewPager;
 
@@ -32,6 +36,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.jessyan.autosize.utils.AutoSizeUtils;
 
 
 public class XinshiFragment extends BaseFragment {
@@ -40,12 +45,13 @@ public class XinshiFragment extends BaseFragment {
     @BindView(R.id.ctl_test_bar) XCollapsingToolbarLayout ctlTestBar;
     @BindView(R.id.recyclerview) RecyclerView recyclerview;
     @BindView(R.id.pager) QMUIViewPager mViewPager;
-    @BindView(R.id.tabs) QMUITabSegment mTabSegment;
+    @BindView(R.id.tabs) TabCustomView mTabSegment;
     @BindView(R.id.btn) FloatingActionButton floatingActionButton;
     private List<XinshiBean> xinshiBeans;
     private static final String TAG = "XinshiFragment";
     private LinearLayoutManager linearLayoutManager;
     private XinshiAdapter xinshiAdapter;
+
     @Override
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_xinshi, null);
@@ -103,9 +109,13 @@ public class XinshiFragment extends BaseFragment {
                 startFragment(xinshiDetailFragment);
             }
         });
-
+        mTabSegment.setDefaultSelectedColor(ContextCompat.getColor(getActivity(), R.color.app_color_blue));
         mTabSegment.setMode(QMUITabSegment.MODE_SCROLLABLE);
+        mTabSegment.setTabSelectTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(),20F));
+        mTabSegment.setTabTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(),18F));
 
+        mTabSegment.setHasIndicator(false);
+//        mTabSegment.notifyDataChanged();
         initPagers();
         return view;
     }
