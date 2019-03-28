@@ -18,6 +18,7 @@
         app:qmui_topbar_bg_color="@color/qmui_config_color_transparent"
         app:qmui_topbar_need_separator="false"/>
     <android.support.v4.widget.NestedScrollView
+        android:layout_marginBottom="50dp"
         android:layout_marginTop="?attr/qmui_topbar_height"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -75,7 +76,72 @@
             android:textColor="#5C5B5B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <View
+            android:visibility="gone"
+            android:id="@+id/lo"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#000000"/>
+        <TextView
+            android:visibility="gone"
+            android:textSize="18sp"
+            android:text="评论："
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/ol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:id="@+id/rel"
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/heaa"
+            android:src="@mipmap/heado"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:textSize="12sp"
+            android:textColor="#1B1B1B"
+            android:text="匿名用户"
+            android:id="@+id/niming"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/heaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="12sp"
+                android:textColor="#fccc"
+                android:text="刚刚"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/niming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="#000000"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
     </LinearLayout>
+
+
     </android.support.v4.widget.NestedScrollView>
 
     <RelativeLayout

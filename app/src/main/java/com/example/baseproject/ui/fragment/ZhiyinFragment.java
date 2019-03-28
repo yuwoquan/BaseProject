@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -144,8 +145,10 @@ public class ZhiyinFragment extends BaseFragment {
                 bgthree.setColor(Color.parseColor("#FFFFFF"));
             }
         });
+
         return view;
     }
+
 
     private void initTabs() {
         int normalColor = QMUIResHelper.getAttrColor(getActivity(), R.attr.qmui_config_color_gray_6);
