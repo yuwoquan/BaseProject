@@ -17,6 +17,22 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            try {
+                storeFile file("./keystore/summary.keystore")
+                storePassword "ywq2380475"
+                keyAlias "forever"
+                keyPassword "ywq2380475"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+        debug {
+            storeFile file("./keystore/debug.keystore")
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -99,4 +115,7 @@ dependencies {
     //屏幕适配方案
     implementation 'me.jessyan:autosize:1.1.2'
     implementation 'com.hjq:titlebar:latest.integration'
+    //搜索功能
+    implementation 'com.amap.api:search:latest.integration'
+    implementation 'com.amap.api:location:4.5.0'
 }

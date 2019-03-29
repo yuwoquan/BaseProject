@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
+import com.example.baseproject.ui.fragment.NearbyFragment;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
 import com.qmuiteam.qmui.widget.QMUITabSegment;
@@ -44,7 +45,7 @@ public class OpenBlackBaseFragment extends BaseFragment {
                         return new MyReleaseFragment();
                     case 2:
                     default:
-                        return new NearByClubFragment();
+                        return new NearbyFragment();
                 }
             }
 
