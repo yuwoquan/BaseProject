@@ -79,7 +79,7 @@ public class ZhuboFragment extends BaseFragment {
     private ThreeAdapter threeAdapter;
     @Override
     protected View onCreateView() {
-        CoordinatorLayout layout = (CoordinatorLayout) LayoutInflater.from(getActivity()).inflate(R.layout.fragment_three, null);
+        View layout = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_three, null);
         ButterKnife.bind(this, layout);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

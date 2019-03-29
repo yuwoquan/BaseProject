@@ -13,6 +13,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v7.widget.AppCompatTextView;
@@ -235,7 +236,7 @@ public class NiceSpinner extends AppCompatTextView {
     }
 
     private Drawable initArrowDrawable(int drawableTint) {
-        Drawable drawable = ContextCompat.getDrawable(getContext(), arrowDrawableResId);
+        Drawable drawable =ResourcesCompat.getDrawable(getResources(),R.drawable.arrow,null);
         if (drawable != null) {
             drawable = DrawableCompat.wrap(drawable);
             if (drawableTint != Integer.MAX_VALUE && drawableTint != 0) {
