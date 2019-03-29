@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
+import com.example.baseproject.ui.fragment.ApplyFragment;
 import com.example.baseproject.ui.fragment.NearbyFragment;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
@@ -40,7 +41,8 @@ public class OpenBlackBaseFragment extends BaseFragment {
             public QMUIFragment createFragment(int position) {
                 switch (position) {
                     case 0:
-                        return new BaoMingFragment();
+                        return new ApplyFragment();
+//                        return new BaoMingFragment();
                     case 1:
                         return new MyReleaseFragment();
                     case 2:

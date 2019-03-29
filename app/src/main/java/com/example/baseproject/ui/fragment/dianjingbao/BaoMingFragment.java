@@ -2,6 +2,7 @@ package com.example.baseproject.ui.fragment.dianjingbao;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 
 import com.example.baseproject.R;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
@@ -26,6 +27,17 @@ public class BaoMingFragment extends BaseFragment {
         ButterKnife.bind(this, view);
         List<String> dataset = new LinkedList<>(Arrays.asList("PUBG", "英雄联盟", "王者荣耀", "QQ飞车", "阴阳师"));
         spinner.attachDataSource(dataset);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         return view;
     }
 

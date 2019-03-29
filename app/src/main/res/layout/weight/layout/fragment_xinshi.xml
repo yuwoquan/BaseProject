@@ -107,18 +107,28 @@
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:visibility="gone" />
-
                     <TextView
                         android:id="@+id/tv_test_search"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="50dp"
                         android:layout_marginRight="50dp"
-                        android:background="@drawable/bg_home_search_bar_transparent"
                         android:gravity="center"
-                        android:text="搜索话题"
-                        android:textColor="#a4a4a4"
-                        android:textSize="14sp" />
+                        android:text="主页"
+                        android:visibility="gone"
+                        android:textColor="#696868"
+                        android:textSize="16sp" />
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_test_search"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginLeft="50dp"-->
+                        <!--android:layout_marginRight="50dp"-->
+                        <!--android:background="@drawable/bg_home_search_bar_transparent"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="搜索话题"-->
+                        <!--android:textColor="#a4a4a4"-->
+                        <!--android:textSize="14sp" />-->
 
                 </LinearLayout>
 

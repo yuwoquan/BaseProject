@@ -17,15 +17,10 @@ import com.example.baseproject.adapter.XinshiAdapter;
 import com.example.baseproject.enity.XinshiBean;
 import com.example.baseproject.eventbus.MessageEvent;
 import com.example.baseproject.mvp.ui.base.BaseFragment;
-import com.example.baseproject.ui.fragment.dianjingbao.BaoMingFragment;
-import com.example.baseproject.ui.fragment.dianjingbao.MyReleaseFragment;
-import com.example.baseproject.ui.fragment.dianjingbao.NearByClubFragment;
-
 import com.example.baseproject.utils.weight.TabCustomView;
 import com.example.baseproject.utils.weight.XCollapsingToolbarLayout;
 import com.qmuiteam.qmui.arch.QMUIFragment;
 import com.qmuiteam.qmui.arch.QMUIFragmentPagerAdapter;
-
 import com.qmuiteam.qmui.widget.QMUITabSegment;
 import com.qmuiteam.qmui.widget.QMUIViewPager;
 
@@ -47,6 +42,7 @@ public class XinshiFragment extends BaseFragment {
     @BindView(R.id.pager) QMUIViewPager mViewPager;
     @BindView(R.id.tabs) TabCustomView mTabSegment;
     @BindView(R.id.btn) FloatingActionButton floatingActionButton;
+    @BindView(R.id.tv_test_search) TextView tvTestSearch;
     private List<XinshiBean> xinshiBeans;
     private static final String TAG = "XinshiFragment";
     private LinearLayoutManager linearLayoutManager;
@@ -68,57 +64,71 @@ public class XinshiFragment extends BaseFragment {
                 startFragment(new PostFragment());
             }
         });
-        linearLayoutManager =new LinearLayoutManager(MyApplication.getContext());
+        linearLayoutManager = new LinearLayoutManager(MyApplication.getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerview.setLayoutManager(linearLayoutManager);
 
         xinshiBeans = new ArrayList<>();
-        xinshiBeans.add(new XinshiBean("缓解抑郁", "只要不放弃，就永远有希望在", "huanjie.json", R.drawable.huanjieyuyi, "huanjienew.json",1224));
-        xinshiBeans.add(new XinshiBean("婚恋挽回", "爱若如水，就别让爱覆水难收", "hunlianwanhui.json", R.drawable.huanlianwanhui, "hunlianwanhuinew.json",8575));
-        xinshiBeans.add(new XinshiBean("减轻焦虑", "克服焦虑，才能做生活的主人", "jianlue.json", R.drawable.jianqingjiaolue, "jianluenew.json",6636));
-        xinshiBeans.add(new XinshiBean("脱离性瘾", "凡事需有度，成瘾就不好了", "jiantuoxingyin.json", R.drawable.tuolixingyin, "jiantuoxingyinnew.json",2345));
-        xinshiBeans.add(new XinshiBean("改变自卑", "自卑的同时必然伴随着超越的力量", "gaibianzibei.json", R.drawable.gaibianzibei, "gaibianzibeinew.json",4255));
-        xinshiBeans.add(new XinshiBean("脱单攻略", "单身可以是一种选择，但不是被迫选择", "tuodangonglue.json", R.drawable.tuodangonglue, "tuodangongluenew.json",6554));
-        xinshiBeans.add(new XinshiBean("同性恋", "真爱的世界不分性别", "tongxinglian.json", R.drawable.tongxinglian, "tongxingliannew.json",5535));
-        xinshiBeans.add(new XinshiBean("争吵分析", "争吵是分歧，也是提升关系的机遇", "zhengcaofenxi.json", R.drawable.zhengchaofenxi, "zhengcaofenxinew.json",4635));
-        xinshiBeans.add(new XinshiBean("婆媳关系", "念好这本难念的经，是一种处世智慧", "poxiguanxi.json", R.drawable.poxiguanxi, "poxiguanxinew.json",2689));
-        xinshiBeans.add(new XinshiBean("问题小孩", "被视为有问题的小孩可能有巨大的潜能", "wentixiaohai.json", R.drawable.wentixiaohai, "wentixiaohainew.json",9743));
-        xinshiBeans.add(new XinshiBean("父母冲突", "每一个成长中的我们都绕不开父母的关心", "fuwuchongtu.json", R.drawable.fumuchongtu, "fuwuchongtunew.json",5432));
-        xinshiBeans.add(new XinshiBean("胜退小三", "在爱情的争夺中，掌握充分的主动权", "shengtuixiaosan.json", R.drawable.shengtuixiaosan, "fuwuchongtunew.json",6432));
+        xinshiBeans.add(new XinshiBean("缓解抑郁", "只要不放弃，就永远有希望在", "huanjie.json", R.drawable.huanjieyuyi, "huanjienew.json", 1224));
+        xinshiBeans.add(new XinshiBean("婚恋挽回", "爱若如水，就别让爱覆水难收", "hunlianwanhui.json", R.drawable.huanlianwanhui, "hunlianwanhuinew.json", 8575));
+        xinshiBeans.add(new XinshiBean("减轻焦虑", "克服焦虑，才能做生活的主人", "jianlue.json", R.drawable.jianqingjiaolue, "jianluenew.json", 6636));
+        xinshiBeans.add(new XinshiBean("脱离性瘾", "凡事需有度，成瘾就不好了", "jiantuoxingyin.json", R.drawable.tuolixingyin, "jiantuoxingyinnew.json", 2345));
+        xinshiBeans.add(new XinshiBean("改变自卑", "自卑的同时必然伴随着超越的力量", "gaibianzibei.json", R.drawable.gaibianzibei, "gaibianzibeinew.json", 4255));
+        xinshiBeans.add(new XinshiBean("脱单攻略", "单身可以是一种选择，但不是被迫选择", "tuodangonglue.json", R.drawable.tuodangonglue, "tuodangongluenew.json", 6554));
+        xinshiBeans.add(new XinshiBean("同性恋", "真爱的世界不分性别", "tongxinglian.json", R.drawable.tongxinglian, "tongxingliannew.json", 5535));
+        xinshiBeans.add(new XinshiBean("争吵分析", "争吵是分歧，也是提升关系的机遇", "zhengcaofenxi.json", R.drawable.zhengchaofenxi, "zhengcaofenxinew.json", 4635));
+        xinshiBeans.add(new XinshiBean("婆媳关系", "念好这本难念的经，是一种处世智慧", "poxiguanxi.json", R.drawable.poxiguanxi, "poxiguanxinew.json", 2689));
+        xinshiBeans.add(new XinshiBean("问题小孩", "被视为有问题的小孩可能有巨大的潜能", "wentixiaohai.json", R.drawable.wentixiaohai, "wentixiaohainew.json", 9743));
+        xinshiBeans.add(new XinshiBean("父母冲突", "每一个成长中的我们都绕不开父母的关心", "fuwuchongtu.json", R.drawable.fumuchongtu, "fuwuchongtunew.json", 5432));
+        xinshiBeans.add(new XinshiBean("胜退小三", "在爱情的争夺中，掌握充分的主动权", "shengtuixiaosan.json", R.drawable.shengtuixiaosan, "fuwuchongtunew.json", 6432));
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startFragment(new MoreFragment());
             }
         });
-        xinshiAdapter=new XinshiAdapter(xinshiBeans);
+        xinshiAdapter = new XinshiAdapter(xinshiBeans);
         recyclerview.setAdapter(xinshiAdapter);
 
         xinshiAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Bundle bundle=new Bundle();
-                first=xinshiAdapter.getData().get(position).getJingxuan();
-                two=xinshiAdapter.getData().get(position).getNewxuan();
+                Bundle bundle = new Bundle();
+                first = xinshiAdapter.getData().get(position).getJingxuan();
+                two = xinshiAdapter.getData().get(position).getNewxuan();
 //                EventBus.getDefault().register(this);
-                EventBus.getDefault().postSticky(new MessageEvent(first,two));
-                Log.e(TAG, "onItemClick: "+first+two );
-                bundle.putSerializable("all",xinshiAdapter.getData().get(position));
-                XinshiDetailFragment xinshiDetailFragment=new XinshiDetailFragment();
+                EventBus.getDefault().postSticky(new MessageEvent(first, two));
+                Log.e(TAG, "onItemClick: " + first + two);
+                bundle.putSerializable("all", xinshiAdapter.getData().get(position));
+                XinshiDetailFragment xinshiDetailFragment = new XinshiDetailFragment();
                 xinshiDetailFragment.setArguments(bundle);
                 startFragment(xinshiDetailFragment);
             }
         });
         mTabSegment.setDefaultSelectedColor(ContextCompat.getColor(getActivity(), R.color.app_color_blue));
         mTabSegment.setMode(QMUITabSegment.MODE_SCROLLABLE);
-        mTabSegment.setTabSelectTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(),20F));
-        mTabSegment.setTabTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(),18F));
+        mTabSegment.setTabSelectTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(), 20F));
+        mTabSegment.setTabTextSize(AutoSizeUtils.sp2px(MyApplication.getContext(), 18F));
 
         mTabSegment.setHasIndicator(false);
 //        mTabSegment.notifyDataChanged();
         initPagers();
+
+
+        ctlTestBar.setOnScrimsListener(new XCollapsingToolbarLayout.OnScrimsListener() {
+            @Override
+            public void onScrimsStateChange(boolean shown) {
+                if (shown){
+                    tvTestSearch.setVisibility(View.VISIBLE);
+                }else {
+                    tvTestSearch.setVisibility(View.GONE);
+                }
+                Log.e(TAG, "onScrimsStateChange: " + shown);
+            }
+        });
         return view;
     }
+
     private void initPagers() {
 
         QMUIFragmentPagerAdapter pagerAdapter = new QMUIFragmentPagerAdapter(getChildFragmentManager()) {
@@ -155,8 +165,4 @@ public class XinshiFragment extends BaseFragment {
         mTabSegment.setupWithViewPager(mViewPager);
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
 }

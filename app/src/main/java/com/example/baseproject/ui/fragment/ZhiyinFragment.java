@@ -99,6 +99,7 @@ public class ZhiyinFragment extends BaseFragment {
                                 });
                             }
                         });
+//                startFragment(new ZhiyinBlankFragment());
             }
         });
 
