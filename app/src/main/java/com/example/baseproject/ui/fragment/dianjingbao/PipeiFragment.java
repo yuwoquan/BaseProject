@@ -34,10 +34,10 @@ public class PipeiFragment extends BaseFragment {
     @BindView(R.id.groupListView) QMUIGroupListView mGroupListView;
     @BindView(R.id.signout) QMUIRoundButton signout;
     private int mCurrentDialogStyle = com.qmuiteam.qmui.R.style.QMUI_Dialog;
-    final String[] itemone = new String[]{"PUBG", "英雄联盟", "王者荣耀", "QQ飞车", "阴阳师"};
+    final String[] itemone = new String[]{"华语", "外语", "全语种"};
     final String[] itemtwo = new String[]{"男生", "女生", "不限"};
-    final String[] itemthree = new String[]{"萌新", "老司机", "一般般"};
-    final String[] itemfour = new String[]{"少年音", "正太音", "萝莉音"};
+    final String[] itemthree = new String[]{"唱歌小白", "K房麦霸", "我是歌手"};
+    final String[] itemfour = new String[]{"清新", "空灵", "沧桑","低沉"};
     private QMUITipDialog tipDialog;
     private TimeDialog timeDialog;
     @Override
@@ -78,10 +78,10 @@ public class PipeiFragment extends BaseFragment {
     }
 
     private void initListview() {  View.OnClickListener onClickListener = null;
-        final QMUICommonListItemView itemWithChevron4 = mGroupListView.createItemView("项目");
+        final QMUICommonListItemView itemWithChevron4 = mGroupListView.createItemView("语种");
         itemWithChevron4.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
         itemWithChevron4.setImageDrawable(getResources().getDrawable(R.drawable.xiangmu));
-        itemWithChevron4.setDetailText("英雄联盟");
+        itemWithChevron4.setDetailText("华语");
         itemWithChevron4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,7 +100,7 @@ public class PipeiFragment extends BaseFragment {
         });
         final QMUICommonListItemView itemWithChevron6 = mGroupListView.createItemView("实力");
         itemWithChevron6.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
-        itemWithChevron6.setDetailText("萌新");
+        itemWithChevron6.setDetailText("唱歌小白");
         itemWithChevron6.setImageDrawable(getResources().getDrawable(R.drawable.power));
         itemWithChevron6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,9 +108,9 @@ public class PipeiFragment extends BaseFragment {
                 showSingleChoiceDialog(itemWithChevron6,itemthree);
             }
         });
-        final  QMUICommonListItemView itemWithChevron7 = mGroupListView.createItemView("声音");
+        final  QMUICommonListItemView itemWithChevron7 = mGroupListView.createItemView("音色");
         itemWithChevron7.setAccessoryType(QMUICommonListItemView.ACCESSORY_TYPE_CHEVRON);
-        itemWithChevron7.setDetailText("少年音");
+        itemWithChevron7.setDetailText("清新");
         itemWithChevron7.setImageDrawable(getResources().getDrawable(R.drawable.kaiheivoice));
         itemWithChevron7.setOnClickListener(new View.OnClickListener() {
             @Override

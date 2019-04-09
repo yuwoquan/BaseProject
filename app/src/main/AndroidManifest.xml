@@ -36,7 +36,7 @@
         </activity>
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="491d38978905d3d6de9b8f001ee8fddc"/>
+            android:value="40f5f01463d1eeb9f92134645e3df0e2"/>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"

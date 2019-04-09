@@ -60,12 +60,12 @@ public class OpenBlackBaseFragment extends BaseFragment {
             public CharSequence getPageTitle(int position) {
                 switch (position) {
                     case 0:
-                        return "报名";
+                        return "线下活动";
                     case 1:
                         return "我的发布";
                     case 2:
                     default:
-                        return "附近网吧";
+                        return "附近K房";
                 }
             }
         };

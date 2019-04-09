@@ -52,7 +52,7 @@ public class ApplyFragment extends BaseFragment {
     }
 
     private void init() {
-        String[] games = {"PUBG", "Dota2", "LOL", "OW"};
+        String[] games = {"华语局","外语局","全语种"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, games);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
@@ -76,10 +76,12 @@ public class ApplyFragment extends BaseFragment {
                         setDate("LOL",2);
                         applyImage.setImageResource(R.drawable.lol);
                         break;
-                    case 3:
-                        setDate("OW",3);
-                        applyImage.setImageResource(R.drawable.ow);
-                        break;
+//                    case 3:
+//                        setDate("OW",3);
+//                        applyImage.setImageResource(R.drawable.ow);
+//                        break;
+                        default:
+                            break;
                 }
             }
 

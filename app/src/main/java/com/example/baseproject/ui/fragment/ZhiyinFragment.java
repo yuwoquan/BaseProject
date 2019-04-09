@@ -40,6 +40,7 @@ public class ZhiyinFragment extends BaseFragment {
     @BindView(R.id.sex) TextView sex;
     @BindView(R.id.man) QMUIRoundButton man;
     @BindView(R.id.woman) QMUIRoundButton woman;
+    @BindView(R.id.oman) QMUIRoundButton buttonn;
     @BindView(R.id.xing) TextView xing;
     @BindView(R.id.qiang) QMUIRoundButton qiang;
     @BindView(R.id.ruo) QMUIRoundButton ruo;
@@ -64,6 +65,7 @@ public class ZhiyinFragment extends BaseFragment {
                 QMUIDisplayHelper.dp2px(MyApplication.getContext(), mShadowElevationDp),
                 mShadowAlpha);
         final QMUIRoundButtonDrawable bgone = (QMUIRoundButtonDrawable) man.getBackground();
+        final QMUIRoundButtonDrawable bgthreee = (QMUIRoundButtonDrawable) buttonn.getBackground();
         final QMUIRoundButtonDrawable bgtwo = (QMUIRoundButtonDrawable) woman.getBackground();
         final QMUIRoundButtonDrawable bgthree = (QMUIRoundButtonDrawable) qiang.getBackground();
         final QMUIRoundButtonDrawable bgfour = (QMUIRoundButtonDrawable) ruo.getBackground();
@@ -72,7 +74,7 @@ public class ZhiyinFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 if (isBoy) {
-                    Toast.makeText(MyApplication.getContext(), "请选择性别", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyApplication.getContext(), "请选择年龄段", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (isQiang) {
@@ -118,16 +120,28 @@ public class ZhiyinFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 isBoy = false;
+                bgthreee.setColor(Color.parseColor("#FFFFFF"));
                 bgone.setColor(Color.parseColor("#3FD0AD"));
                 bgtwo.setColor(Color.parseColor("#FFFFFF"));
+
             }
         });
         woman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isBoy = false;
-                bgtwo.setColor(Color.parseColor("#EE85C1"));
+                bgtwo.setColor(Color.parseColor("#3FD0AD"));
                 bgone.setColor(Color.parseColor("#FFFFFF"));
+                bgthreee.setColor(Color.parseColor("#FFFFFF"));
+            }
+        });
+        buttonn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isBoy = false;
+                bgtwo.setColor(Color.parseColor("#FFFFFF"));
+                bgone.setColor(Color.parseColor("#FFFFFF"));
+                bgthreee.setColor(Color.parseColor("#3FD0AD"));
             }
         });
         qiang.setOnClickListener(new View.OnClickListener() {

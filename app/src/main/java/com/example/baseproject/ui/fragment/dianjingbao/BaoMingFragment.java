@@ -25,7 +25,7 @@ public class BaoMingFragment extends BaseFragment {
     protected View onCreateView() {
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_bao_ming, null);
         ButterKnife.bind(this, view);
-        List<String> dataset = new LinkedList<>(Arrays.asList("PUBG", "英雄联盟", "王者荣耀", "QQ飞车", "阴阳师"));
+        List<String> dataset = new LinkedList<>(Arrays.asList("华语局","外语局","全语种"));
         spinner.attachDataSource(dataset);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
